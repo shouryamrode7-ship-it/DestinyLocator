@@ -1,7 +1,9 @@
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top py-2">
+<% const activeUser = typeof currUser !== "undefined" ? currUser : null; %>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center" href="/listings">
-      <i class="fa-regular fa-compass compass-icon"></i>
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-regular fa-compass"></i> DestinyLocator
     </a>
 
     <button
@@ -21,28 +23,28 @@
         <a class="nav-link" href="/listings">Explore</a>
       </div>
 
-      <form class="d-flex align-items-center mx-md-auto my-2 my-md-0" action="/listings" method="GET" role="search">
+      <form class="d-flex ms-auto me-auto" role="search" action="/listings" method="GET">
         <input
-          class="form-control search-inp"
+          class="form-control me-2 search-inp"
           type="search"
           name="search"
-          value="<%= typeof search !== 'undefined' ? search : '' %>"
           placeholder="Search destinations"
-          aria-label="Search destinations"
+          aria-label="Search"
+          value="<%= typeof search !== 'undefined' ? search : '' %>"
         />
-        <button class="btn search-btn d-inline-flex align-items-center gap-2" type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span>Search</span>
+        <button class="btn search-btn" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>Search
         </button>
       </form>
 
-      <div class="navbar-nav ms-auto align-items-md-center gap-md-2">
-        <a class="nav-link" href="/listings/new">Airbnb your home</a>
-        <% if (!currUser) { %>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Add new listing</a>
+        <% if (!activeUser) { %>
           <a class="nav-link" href="/signup"><b>Sign up</b></a>
           <a class="nav-link" href="/login"><b>Log in</b></a>
         <% } else { %>
-          <a class="nav-link" href="/logout">Log out</a>
+          <span class="nav-link text-muted">@<%= activeUser.username %></span>
+          <a class="nav-link" href="/logout"><b>Log out</b></a>
         <% } %>
       </div>
     </div>
