@@ -1,13 +1,16 @@
-<% if (success && success.length) { %>
+<% const successMsgs = typeof success !== "undefined" && success ? success : []; %>
+<% const errorMsgs = typeof error !== "undefined" && error ? error : []; %>
+
+<% if (successMsgs.length) { %>
   <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
-    <%= success %>
+    <%= successMsgs %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% } %>
 
-<% if (error && error.length) { %>
+<% if (errorMsgs.length) { %>
   <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
-    <%= error %>
+    <%= errorMsgs %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% } %>
