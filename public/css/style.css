@@ -1,0 +1,214 @@
+ body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} 
+
+.containeer {
+   flex: 1; 
+}
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link  {
+    color: #222 !important;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links, .f-info-socials, .f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i {
+    margin-right: 1rem;
+}
+
+.f-info {
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+ border-radius: 1rem !important;
+ width: 100% !important;
+ object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+
+}
+.card-text {
+    font-weight: 400 !important;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.edit-btn {
+     background-color: #fe424d !important;
+     border: none !important;
+}
+
+.show-img {
+    height: 30vh;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#map { 
+   height: 400px;
+   width: 80vh;
+}
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.filter {
+  text-align: center;
+  opacity: 0.65;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.filter:hover {
+  opacity: 1;
+}
+
+.filter i {
+  font-size: 1.15rem;
+  color: #222222;
+}
+
+.filter p {
+  font-size: 0.78rem;
+  margin: 0.3rem 0 0;
+  color: #222222;
+  white-space: nowrap;
+}
+
+.tax-toggle {
+  border: 1px solid #cccccc;
+  border-radius: 0.85rem;
+  height: 3.1rem;
+  padding: 0 1.1rem;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.tax-toggle .form-check-label {
+  font-size: 0.88rem;
+  color: #222222;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tax-toggle .form-check-input {
+  cursor: pointer;
+}
+
+.compass-icon {
+  color: #fe424d;
+  font-size: 1.85rem;
+}
+
+.search-inp {
+  border-radius: 999px;
+  padding: 0.55rem 1.8rem;
+  font-size: 0.92rem;
+  width: 19rem;
+  border: 1px solid #dddddd;
+  color: #222222;
+}
+
+.search-inp::placeholder {
+  color: #717171;
+  text-align: center;
+}
+
+.search-inp:focus {
+  box-shadow: none;
+  border-color: #b0b0b0;
+}
+
+.search-inp:focus::placeholder {
+  color: transparent;
+}
+
+.search-btn {
+  background-color: #fe424d;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border: none;
+  margin-left: 0.65rem;
+  white-space: nowrap;
+}
+
+.search-btn:hover {
+  background-color: #e23641;
+  color: #ffffff;
+}
+
+.navbar-nav .nav-link {
+  color: #222222;
+  white-space: nowrap;
+}
