@@ -47,7 +47,10 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-const store = MongoStore.create({
+const connectMongo = require("connect-mongo");
+const MongoStore = connectMongo.create ? connectMongo : connectMongo.default;
+
+const store = new MongoStore({
   mongoUrl: dbUrl,
   crypto: {
     secret: process.env.SECRET,
@@ -55,22 +58,21 @@ const store = MongoStore.create({
   touchAfter: 24 * 3600,
 });
 
-store.on("error", () => {
-  console.log("ERROR in Mongosession store")
+store.on("error", (err) => {
+  console.log("ERROR in Mongosession store", err);
 });
 
 const sessionOptions = {
   store,
-  secret : process.env.SECRET,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: {
     expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-    maxAge:   7 * 24 * 60 * 60 * 1000,
+    maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
   },
 };
-
 
 // app.get("/", (req, res) => {
 //   res.send("Hi, I am root");
